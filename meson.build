@@ -24,7 +24,6 @@ incdir = include_directories(
 #//***********************************************************/
 test_chan1 = executable('test_chan1', [ 
     'tests/test_chan1.c',  
-    'src/deps.c',
   ], include_directories : [incdir], 
   dependencies : [],
 )

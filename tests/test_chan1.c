@@ -1,13 +1,17 @@
 #undef __STRICT_ANSI__
-
+/***********************/
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-
+/***********************/
+#include "src/deps.c"
+/***********************/
 #include "chan.c"
+/***********************/
 #include "queue.c"
+/***********************/
 
 
 int passed = 0;
@@ -483,6 +487,12 @@ void test_chan_multi2(){
 } /* test_chan_multi2 */
 
 
+void dev(){
+  log_debug("OK");
+  dbg(123, % d);
+}
+
+
 int main(){
   test_chan_init();
   test_chan_close();
@@ -495,5 +505,6 @@ int main(){
   test_chan_multi();
   test_chan_multi2();
   printf("\n%d passed\n", passed);
+  dev();
   return(0);
 }

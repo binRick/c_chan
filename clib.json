@@ -1,0 +1,17 @@
+{
+    "name": "c_chan",
+    "version": "0.0.1",
+    "repo": "binRick/c_chan",
+    "description": "C Base64 Encoder & Decoder",
+    "keywords": [
+        "c",
+        "chan",
+        "module"
+    ],
+    "license": "MIT",
+    "makefile": "Makefile",
+    "install": "make install",
+    "dependencies": {
+        "clibs/module": "0.1.1"
+    }
+}

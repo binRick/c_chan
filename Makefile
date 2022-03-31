@@ -9,7 +9,7 @@ default: all
 
 .PHONY: all
 
-all: clib build test
+all: build test
 
 .PHONY: .FORCE
 .FORCE:
@@ -29,7 +29,7 @@ rm_bd:
 rm_deps:
 	@test -d deps && rm -rf deps
 
-clean: rm_deps rm_bd
+clean: rm_deps rm_bd clib
 
 debug: build
 	@$(PASSH_NINJA) ninja -C $(BUILD_DIR)

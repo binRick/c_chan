@@ -22,14 +22,28 @@ incdir = include_directories(
   '../ok',
 )
 #//***********************************************************/
+test_script1 = executable('test_script1', [ 
+    'deps/c_scriptexec/example.c',
+  ], include_directories : [incdir], 
+  dependencies : [],
+)
+test_chan2 = executable('test_chan2', [ 
+    'tests/test_chan2.c',  
+    'src/fsio.c',
+  ], include_directories : [incdir], 
+  dependencies : [],
+)
 test_chan1 = executable('test_chan1', [ 
     'tests/test_chan1.c',  
+    'src/fsio.c',
   ], include_directories : [incdir], 
   dependencies : [],
 )
 #//***********************************************************/
 tests = [
   ['test chan 1', test_chan1, 'test-chan-1.log'],
+  ['test chan 1', test_chan2, 'test-chan-1.log'],
+  #/  ['script 1', test_script1, 'test-script-1.log'],
 ]
 #//***********************************************************/
 
